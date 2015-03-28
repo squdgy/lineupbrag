@@ -1,0 +1,25 @@
+{
+  "name": "TrollFaces",
+  "version": "0.1.1",
+  "description": "Must turn Codegram team members pics into troll faces.",
+  "browser_action": {
+    "default_icon": "icon.png",
+	"default_title":  "Brag It!"
+  },
+  "background": {
+    "scripts": ["bootstrap.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      // Change 'matches' attribute to load content
+      // script only in pages you want to.
+      "matches": ["https://*/*", "http://*/*"],
+      "css": ["basic.css"],
+      "js": ["jquery.min.js", "content.js"]
+    }
+  ],
+  "manifest_version": 2, 
+  "web_accessible_resources": ["trollface.png"]
+
+}
